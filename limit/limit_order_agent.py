@@ -121,7 +121,7 @@ class LimitOrderAgent(PriceListener):
                     time.sleep(1)
     
     def stop_processing_queue(self) -> None:
-        """Stop queue processing thread
+        """Stop thread responsible for queue processing
         """
         self._stop_thread_event.set()
         self._thread.join()
