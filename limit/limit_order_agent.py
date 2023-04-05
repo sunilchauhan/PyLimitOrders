@@ -3,7 +3,7 @@ Module responsible for executing limit price orders
 
 Author: Sunil Chauhan
 
-The functions in this module facilitate to accept Orders for limit order processing using multi-threading.
+The functions in this module facilitate to accept Orders for limit order processing.
 
 Usage:
     from limit_order_agent import LimitOrderAgent, Order
