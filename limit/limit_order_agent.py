@@ -17,13 +17,15 @@ Current flaws (limitations) of the trading framework:
 1. ExecutionClient Protocol class through 'buy' and 'sell' abstract methods implements interface
    or contract for structural duck typing. But, there is no return type defined for the abstract 
    methods which should be mandatory criteria for consistant interface implementation of Protocol.
-2. There is no concrete implementations of ExecutionClient Protocol abstract methods 'buy' and 'sell'
-3. There is no "Has-a" relationship between LimitOrderAgent class and PriceListener class. In other words,
+2. There is no concrete implementations of ExecutionClient Protocol abstract methods 'buy' and 'sell'.
+   Calling these methods with the provided ExecutionClient object will throw NotImplementedError
+3. There is no "Has-a" relationship between LimitOrderAgent class and PriceListener Protocol class. In other words,
    there is no need for LimitOrderAgent class to inherit all the properties and methods of PriceListener 
    class. So, rather than inheriting from PriceListener class, PriceListener class object should be used as 
    composition (similar to ExecutionClient object).
 4. Using PriceListener class object as composition removes tight coupling between these two classes. This 
-   improves re-usability of LimitOrderAgent class to work with different broker PriceListners
+   improves re-usability of LimitOrderAgent class to work with different broker PriceListners using on_price_tick()
+   method
 5. No return type defined for on_price_tick() of PriceListener Protocol
 6. No broker APIs provided for on_price_tick() implementation, hence 'random' module is used to simulate
    real-time ticker pricing.
