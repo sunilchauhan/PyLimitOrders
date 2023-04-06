@@ -24,7 +24,7 @@ Current flaws (limitations) of the trading framework:
 4. Custom ExecutionException should be one of the return value of abstract methods 'buy' and 'sell'.
    This will indicate to classes implementing abstract methods to raise ExecutionException in case of execution
    error (as described in docstring of 'buy'/'sell' methods).
-5. There is no "Has-a" relationship between LimitOrderAgent class and PriceListener Protocol class. In other words,
+5. There is no "Is-a" relationship between LimitOrderAgent class and PriceListener Protocol class. In other words,
    there is no need for LimitOrderAgent class to inherit all the properties and methods of PriceListener 
    class. So, rather than inheriting from PriceListener class, PriceListener class object should be used as 
    composition (similar to ExecutionClient object).
